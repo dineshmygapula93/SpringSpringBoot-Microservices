@@ -17,6 +17,7 @@ import com.nt.model.Employee;
 @Repository("empDao")
 public class EmployeeDao implements IEmployeeDAO {
 	private static final String Get_Emp_Desgn = "Select empno,ename,job,sal,deptno from emp where job in(?,?,?) order by job";
+	private static final String insert_Emp_Query = "insert into emp(empno,ename,job,sal,deptno) values(emp_SEQ.nextval,?,?,?,?)";
 	@Autowired
 	private DataSource ds;
 
@@ -60,6 +61,27 @@ public class EmployeeDao implements IEmployeeDAO {
 			throw e;
 		}
 		return list;
+	}
+
+	@Override
+	public int insertEmployee(Employee emp) throws Exception {
+		int result = 0;
+		try (Connection con = ds.getConnection(); PreparedStatement ps = con.prepareStatement(insert_Emp_Query);) {
+			ps.setString(1, emp.getName());
+			ps.setString(2, emp.getDesgn());
+			ps.setDouble(3, emp.getSalary());
+			ps.setInt(4, emp.getDeptno());
+
+			result = ps.executeUpdate();
+			return result;
+		} catch (SQLException se) {
+			se.printStackTrace();
+			throw se;
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw e;
+		}
+
 	}
 
 }

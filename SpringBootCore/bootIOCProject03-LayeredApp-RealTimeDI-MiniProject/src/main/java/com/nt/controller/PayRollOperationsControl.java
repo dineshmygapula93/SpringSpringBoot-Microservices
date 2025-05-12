@@ -23,4 +23,9 @@ public class PayRollOperationsControl {
 		return list;
 	}
 
+	public String processEmployeeForRegestriation(Employee emp) throws Exception {
+		String message = empservice.registerEmployee(emp);
+		return message;
+	}
+
 }
