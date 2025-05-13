@@ -1,5 +1,6 @@
 package com.nt;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,6 +15,17 @@ import com.nt.model.Employee;
 @SpringBootApplication
 @ImportResource("com/nt/cfgs/applicationContext.xml")
 public class BootIocProject04LayeredAppRealTimeDi {
+	/*
+	 * @Autowired private Environment env;
+	 */
+	/*
+	 * @Bean public ComboPooledDataSource createC3PODs() throws Exception{
+	 * ComboPooledDataSource ds=new ComboPooledDataSource();
+	 * ds.setDriverClass(env.getProperty("spring.datasource.driver-class-name"));
+	 * ds.setJdbcUrl(env.getProperty("spring.datasource.url"));
+	 * ds.setUser(env.getProperty("spring.datasource.username"));
+	 * ds.setPassword(env.getProperty("spring.datasource.password")); return ds; }
+	 */
 
 	public static void main(String[] args) {
 
@@ -44,7 +56,7 @@ public class BootIocProject04LayeredAppRealTimeDi {
 			String msg = proc.processEmployeeForRegestriation(emp);
 			System.out.println(msg);
 		} catch (Exception e) {
-			//e.printStackTrace();
+			// e.printStackTrace();
 			System.err.println("Internall problem --try again");
 		}
 
