@@ -30,6 +30,7 @@ public class MySqlEmployeeDao implements IEmployeeDAO {
 	@Override
 	public List<Employee> getEmployeeDetails(String desgn1, String desgn2, String desgn3) throws Exception {
 		System.out.println("MySqlEmployeeDao.getEmployeeDetails()");
+		System.out.println("Data source object class"+ds.getClass());
 		try {
 			Connection con = ds.getConnection();
 
