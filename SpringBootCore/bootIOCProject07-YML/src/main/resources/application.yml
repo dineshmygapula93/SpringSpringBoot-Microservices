@@ -1,0 +1,27 @@
+per:
+  info:
+    id: '1001'
+    idDetails:
+      aadhar: '454553534'
+      panno: '4556655'
+      voterid: '45345535'
+    company:
+      cid: '5423'
+      location: hyd
+      cname: sai
+      pinCode: '500020'
+    email: dinesh@gmail.com
+    fav-colors: Red,White,Black
+    friends: satish,rishi,yashwant
+    addrs: Palakollu
+    favColors[2]: blue
+    favColors[1]: green
+    phone-numbers: 999999,8888888,7777777
+    name: Dinesh
+    mobileNo: '99999999'
+    favColors[0]: red
+  data:
+    mail: dinesh@yahoo.com
+spring:
+  application:
+    name: BootIOCProject06-BulkInjection
