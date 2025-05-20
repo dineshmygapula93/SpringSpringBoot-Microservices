@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    username: dinesh
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    type: oracle.ucp.jdbc.PoolDataSourceImpl
+    password: dinesh9999
+  application:
+    name: bootIOCProject03-LayeredApp-RealTimeDI-MiniProject
