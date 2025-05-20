@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: bootIOCProject08-MiniProject
+  profiles:
+    include: dev
+
+---
+spring:
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      url: jdbc:mysql:///sbms
+      type: org.apache.commons.dbcp2.BasicDataSource
+      password: dinesh9999
+  application:
+      name: bootIOCProject03-LayeredApp-RealTimeDI-MiniProject
+---
+spring:
+  datasource:
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      username: dinesh
+      url: jdbc:oracle:thin:@localhost:1521:xe
+      password: dinesh9999
+  application:
+      name: bootIOCProject03-LayeredApp-RealTimeDI-MiniProject
+---
+spring:
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      url: jdbc:mysql:///sbms
+      type: com.mchange.v2.c3p0.ComboPooledDataSource
+      password: dinesh9999
+  application:
+    name: bootIOCProject03-LayeredApp-RealTimeDI-MiniProject
+---
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    username: dinesh
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    type: oracle.ucp.jdbc.PoolDataSourceImpl
+    password: dinesh9999
+  application:
+    name: bootIOCProject03-LayeredApp-RealTimeDI-MiniProject
+
+
