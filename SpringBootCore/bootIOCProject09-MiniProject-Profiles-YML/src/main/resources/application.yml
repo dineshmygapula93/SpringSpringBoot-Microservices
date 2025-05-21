@@ -2,4 +2,4 @@ spring:
   application:
     name: bootIOCProject08-MiniProject
   profiles:
-    include: dev
+    include: uat

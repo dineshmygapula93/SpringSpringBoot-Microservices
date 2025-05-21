@@ -2,10 +2,13 @@ spring:
   application:
     name: bootIOCProject08-MiniProject
   profiles:
-    include: dev
+    include: uat
 
 ---
 spring:
+  config:
+    activate:
+       on-profile: dev
   datasource:
       driver-class-name: com.mysql.cj.jdbc.Driver
       username: root
@@ -16,6 +19,9 @@ spring:
       name: bootIOCProject03-LayeredApp-RealTimeDI-MiniProject
 ---
 spring:
+  config:
+    activate:
+      on-profile: dev
   datasource:
       driver-class-name: oracle.jdbc.driver.OracleDriver
       username: dinesh
@@ -25,6 +31,9 @@ spring:
       name: bootIOCProject03-LayeredApp-RealTimeDI-MiniProject
 ---
 spring:
+  config:
+    activate:
+     on-profile: test
   datasource:
       driver-class-name: com.mysql.cj.jdbc.Driver
       username: root
@@ -35,6 +44,9 @@ spring:
     name: bootIOCProject03-LayeredApp-RealTimeDI-MiniProject
 ---
 spring:
+  config:
+    activate:
+      on-profile: uat
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
     username: dinesh
