@@ -121,30 +121,30 @@ public class ActorMgmtService implements IActorMgmtService {
 
 	@Override
 	public String deleteActorById(int id) {
-		Optional<Actor> opt=actorrepo.findById(id);
-		if(opt.isEmpty()) {
+		Optional<Actor> opt = actorrepo.findById(id);
+		if (opt.isEmpty()) {
 			return "id is not found for deletion";
-		}else {
+		} else {
 			actorrepo.deleteById(id);
-			return id+" is founded and deleted";
+			return id + " is founded and deleted";
 		}
 	}
 
 	@Override
 	public String deleteActor(Actor actor) {
-		Optional<Actor> opt=actorrepo.findById(actor.getAid());
-		if(opt.isEmpty()) {
+		Optional<Actor> opt = actorrepo.findById(actor.getAid());
+		if (opt.isEmpty()) {
 			return "id is not found for deletion";
-		}else {
+		} else {
 			actorrepo.delete(actor);
-			return actor.getAid()+" is founded and deleted";
+			return actor.getAid() + " is founded and deleted";
 		}
 	}
 
 	@Override
 	public String deleteAllActors() {
-		long count=actorrepo.count();
+		long count = actorrepo.count();
 		actorrepo.deleteAll();
-		return count+"number of deleted";
+		return count + "number of deleted";
 	}
 }

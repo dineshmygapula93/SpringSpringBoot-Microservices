@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 public class Actor {
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "AID", length = 30)
 	private Integer aid;
 

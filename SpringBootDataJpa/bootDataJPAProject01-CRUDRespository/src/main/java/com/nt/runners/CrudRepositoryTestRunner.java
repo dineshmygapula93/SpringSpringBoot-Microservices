@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import com.nt.entity.Actor;
 import com.nt.service.ActorMgmtService;
+
 @Component
 public class CrudRepositoryTestRunner implements CommandLineRunner {
 
@@ -40,7 +41,7 @@ public class CrudRepositoryTestRunner implements CommandLineRunner {
 //		} catch (Exception e) {
 //			e.printStackTrace();
 //		}
-		
+
 //		try {
 //			Actor actor1 =new Actor("dinesh11","palakollu4","hero4",99999L,5030013.0);
 //			Actor actor2 =new Actor("dinesh12","palakollu5","hero5",999991L,5030023.0);
@@ -54,12 +55,11 @@ public class CrudRepositoryTestRunner implements CommandLineRunner {
 //		} catch (Exception e) {
 //			e.printStackTrace();
 //		}
-		
-		
-	Iterable<Actor> actorsall=actorservice.showAllActors();
-		
+
+		Iterable<Actor> actorsall = actorservice.showAllActors();
+
 		actorsall.forEach(System.out::println);
-		 
+
 //		List<Integer> ids =new ArrayList();
 //		ids.add(1054);
 //		ids.add(1055);
@@ -69,7 +69,7 @@ public class CrudRepositoryTestRunner implements CommandLineRunner {
 //		
 //		Iterable<Actor> actorbyid=actorservice.showactorsbyid(ids);
 //		actorbyid.forEach(System.out ::println);
-		
+
 //		
 //		try {
 //			String msgid=actorservice.showActorById(12);
@@ -91,18 +91,17 @@ public class CrudRepositoryTestRunner implements CommandLineRunner {
 //		} catch (Exception e) {
 //			e.printStackTrace();
 //		}
-		
+
 //		try {
 //			String msgup=actorservice.updateActorFeeById(1052, 20.00f);
 //			System.out.println(msgup);
 //		} catch (Exception e) {
 //			e.printStackTrace();
 //		}
-		
+
 //		Actor actor =new Actor(952,"dinuu2","Mattaparru","superstar",999999912L,1283.33);
 //		String msgupd=actorservice.updateActor(actor);
 //		System.out.println(msgupd);
-		
 
 //		try {
 //			String msgd=actorservice.deleteActorById(1052);
@@ -111,7 +110,7 @@ public class CrudRepositoryTestRunner implements CommandLineRunner {
 //			e.printStackTrace();
 //		}
 //	}
-		
+
 //		try {
 //			Actor actor =new Actor();
 //			actor.setAid(952);
@@ -121,9 +120,8 @@ public class CrudRepositoryTestRunner implements CommandLineRunner {
 //			e.printStackTrace();
 //		}
 
-	
 		try {
-			String msgdall=actorservice.deleteAllActors();
+			String msgdall = actorservice.deleteAllActors();
 			System.out.println(msgdall);
 		} catch (Exception e) {
 			e.printStackTrace();
