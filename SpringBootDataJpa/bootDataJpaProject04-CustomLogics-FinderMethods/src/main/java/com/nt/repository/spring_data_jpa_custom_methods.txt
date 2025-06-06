@@ -1,0 +1,169 @@
+
+Spring Data JPA Custom Method Clauses List
+==========================================
+
+Prefix Keywords:
+----------------
+- findBy
+- readBy
+- getBy
+- countBy
+- existsBy
+- deleteBy
+- removeBy
+
+Comparison Operators:
+---------------------
+- Is / Equals            -> findByNameIs(String name)
+- Not / IsNot            -> findByCategoryNot(String cat)
+- Null                   -> findByAddressIsNull()
+- NotNull                -> findByAddressIsNotNull()
+- True / False           -> findByActiveTrue()
+- GreaterThan            -> findByFeeGreaterThan(Double fee)
+- LessThan               -> findByFeeLessThan(Double fee)
+- Between                -> findByFeeBetween(a, b)
+- After (Date/Time)      -> findByCreatedAtAfter(Date d)
+- Before (Date/Time)     -> findByCreatedAtBefore(Date d)
+
+String Matching:
+----------------
+- Like                   -> findByNameLike(String pattern)
+- NotLike                -> findByNameNotLike(String pattern)
+- StartingWith           -> findByNameStartingWith(String prefix)
+- EndingWith             -> findByNameEndingWith(String suffix)
+- Containing             -> findByNameContaining(String keyword)
+- IgnoreCase             -> findByNameIgnoreCase(String name)
+
+Logical Operators:
+------------------
+- And                    -> findByCategoryAndFee(String cat, Double fee)
+- Or                     -> findByCategoryOrFee(String cat, Double fee)
+
+Collection/Range Operators:
+---------------------------
+- In                     -> findByCategoryIn(List<String> categories)
+- NotIn                  -> findByFeeNotIn(List<Double> feeList)
+
+Ordering:
+---------
+- OrderBy                -> findByCategoryOrderByNameAsc()
+- Asc / Desc             -> findByCategoryOrderByFeeDesc()
+
+Top/First N Records:
+--------------------
+- Top                    -> findTop3ByOrderByFeeDesc()
+- First                  -> findFirst2ByCategory(String cat)
+
+Example Composite Methods:
+--------------------------
+- findByCategoryAndFeeGreaterThanAndNameStartingWith(String category, Double fee, String name)
+- findTop5ByCategoryOrderByFeeDesc(String category)
+
+Note:
+-----
+- Use exact Java field names from the Entity.
+- Method name is case-insensitive but field names are case-sensitive.
+
+1. findBy
+   - Finds entities based on field.
+   - Example: findByAge(int age)
+
+2. findBy...And...
+   - Combines conditions with AND.
+   - Example: findByAgeAndName(int age, String name)
+
+3. findBy...Or...
+   - Combines conditions with OR.
+   - Example: findByAgeOrName(int age, String name)
+
+4. findBy...Between
+   - Range queries.
+   - Example: findByAgeBetween(int start, int end)
+
+5. findBy...LessThan
+   - Values less than given.
+   - Example: findByAgeLessThan(int age)
+
+6. findBy...LessThanEqual
+   - Values less than or equal to given.
+   - Example: findByAgeLessThanEqual(int age)
+
+7. findBy...GreaterThan
+   - Values greater than given.
+   - Example: findByAgeGreaterThan(int age)
+
+8. findBy...GreaterThanEqual
+   - Values greater than or equal to given.
+   - Example: findByAgeGreaterThanEqual(int age)
+
+9. findBy...IsNull
+   - Null check.
+   - Example: findByEmailIsNull()
+
+10. findBy...IsNotNull
+    - Not null check.
+    - Example: findByEmailIsNotNull()
+
+11. findBy...Like
+    - SQL LIKE matching.
+    - Example: findByNameLike(String namePattern)
+
+12. findBy...NotLike
+    - SQL NOT LIKE matching.
+    - Example: findByNameNotLike(String namePattern)
+
+13. findBy...StartingWith
+    - Starts with matching.
+    - Example: findByNameStartingWith(String prefix)
+
+14. findBy...EndingWith
+    - Ends with matching.
+    - Example: findByNameEndingWith(String suffix)
+
+15. findBy...Containing
+    - Substring matching.
+    - Example: findByNameContaining(String infix)
+
+16. findBy...OrderBy...Asc
+    - Sorting ascending.
+    - Example: findByAgeOrderByNameAsc()
+
+17. findBy...OrderBy...Desc
+    - Sorting descending.
+    - Example: findByAgeOrderByNameDesc()
+
+18. findBy...True / findBy...False
+    - Boolean values.
+    - Example: findByActiveTrue()
+
+19. findBy...In
+    - IN clause.
+    - Example: findByAgeIn(List<Integer> ages)
+
+20. findBy...NotIn
+    - NOT IN clause.
+    - Example: findByAgeNotIn(List<Integer> ages)
+
+21. countBy...
+    - Count rows matching criteria.
+    - Example: countByAge(int age)
+
+22. deleteBy...
+    - Delete rows by field.
+    - Example: deleteByAge(int age)
+
+23. existsBy...
+    - Check if entity exists.
+    - Example: existsByEmail(String email)
+
+24. findFirstBy...
+    - Return first matching result.
+    - Example: findFirstByOrderByAgeAsc()
+
+25. findTop3By...
+    - Return top N matching.
+    - Example: findTop3ByOrderBySalaryDesc()
+
+26. findDistinctBy...
+    - Select distinct results.
+    - Example: findDistinctByName(String name)
