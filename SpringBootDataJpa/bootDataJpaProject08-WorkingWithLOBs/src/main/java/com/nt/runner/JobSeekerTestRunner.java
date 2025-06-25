@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 import com.nt.entity.JobSeeker;
 import com.nt.service.IJobSeekerMgmtService;
 
-@Component
+//@Component
 public class JobSeekerTestRunner implements CommandLineRunner {
 	@Autowired
 	private IJobSeekerMgmtService jobservice;

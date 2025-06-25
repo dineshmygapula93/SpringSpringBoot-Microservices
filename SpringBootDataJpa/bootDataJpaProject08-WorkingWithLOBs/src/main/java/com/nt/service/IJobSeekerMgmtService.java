@@ -4,4 +4,5 @@ import com.nt.entity.JobSeeker;
 
 public interface IJobSeekerMgmtService {
 	public String registerJobSeeker(JobSeeker seeker);
+	public JobSeeker showJobSeeker(int id);
 }

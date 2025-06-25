@@ -19,4 +19,9 @@ public class JobSeekerMgmtService implements IJobSeekerMgmtService {
 		return "JobSeeker is saved with id " + idval;
 	}
 
+	@Override
+	public JobSeeker showJobSeeker(int id) {
+		return jobrepo.findById(id).orElseThrow(() -> new IllegalArgumentException());
+	}
+
 }
