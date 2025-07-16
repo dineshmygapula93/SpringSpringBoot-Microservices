@@ -19,8 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.nt.service.IDoctorMgmtService;
 import com.nt.vo.DoctorVO;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("/doctor-api")
+@Tag(name="doctor",description = "Doctor Rest API")
 public class DoctorRestAPIOperations {
 	@Autowired
 	private IDoctorMgmtService docService;
