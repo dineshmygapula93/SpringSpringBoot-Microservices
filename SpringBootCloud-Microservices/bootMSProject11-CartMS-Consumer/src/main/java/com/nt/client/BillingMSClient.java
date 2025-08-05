@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 public class BillingMSClient {
 
 	@Autowired
-	private LoadBalancerClient client; 
+	private LoadBalancerClient client;
 
 	@Value("${spring.application.instance}")
 	public String instanceid;
